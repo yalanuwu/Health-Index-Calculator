@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HEALTH INDEX CALCULATOR</title>
+</head>
+<body>
+    <div class="header">Health Index Calculator</div>
+    <div class="container">
+    <form class="form">
+    <div class="card">
+        <h2>Enter Details</h2>
+        <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter Name" required>
+        </div>
+        <div class="input-group">
+            <label for="age">Age</label>
+            <input type="number" min=18 id="age" placeholder="Enter Age" required>
+        </div>
+        <div class="input-group">
+            <label for="pulse">Pulse (BPM)</label>
+            <!-- <input type="number" id="pulse" placeholder="Enter Pulse"> -->
+            <select id="pulse" required>
+                <option value="">Select Pulse Range</option>
+                <option value="2">Below 40</option>
+                <option value="4">40-49 BPM</option>
+                <option value="7">50-59 BPM</option>
+                <option value="10">60-80 BPM</option>
+                <option value="7">81-90 BPM</option>
+                <option value="4">91-100 BPM</option>
+                <option value="2">Above 100</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="bp">Blood Pressure (mmHg)</label>
+            <div class="bp-group">
+                <input type="number" id="bp-systolic" placeholder="Enter Systolic BP" min=80 max=120 required>
+                <input type="number" id="bp-diastolic" placeholder="Enter Diastolic BP" min=50 max=150 required>
+            </div>
+            
+        </div>
+        <button class="btn" onclick="calculate()">Calculate</button>
+    </div>
+    </form>
+    <div class="card score-card" id="scoreCard">
+        Result
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
