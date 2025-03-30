@@ -1,7 +1,3 @@
-const inRange = function(a, b, c) {
-    return c >= a && c <= b;
-}
-
 function calculate(){
     event.preventDefault();
     const user_name = document.getElementById('name').value;
