@@ -20,19 +20,18 @@ function calculate(){
     const pulse_score = document.getElementById('pulse').value;
 
     //BP Score Calculation
-    let bp_score
-    if(inRange(110, 130, systolic_bp) && inRange(70, 85, diastolic_bp)){
-        bp_score = 10
+    let bp_score = 0;
+    if (systolic_bp >= 110 && systolic_bp <= 130 && diastolic_bp >= 70 && diastolic_bp <= 85) {
+        bp_score = 10;
+    } else if ((systolic_bp >= 90 && systolic_bp <= 109 && diastolic_bp >= 60 && diastolic_bp <= 69) || 
+               (systolic_bp >= 131 && systolic_bp <= 139 && diastolic_bp >= 86 && diastolic_bp <= 89)) {
+        bp_score = 7;
+    } else if ((systolic_bp >= 140 && systolic_bp <= 159 && diastolic_bp >= 90 && diastolic_bp <= 99) || 
+               (systolic_bp >= 80 && systolic_bp <= 89 && diastolic_bp >= 50 && diastolic_bp <= 59)) {
+        bp_score = 4;
+    } else {
+        bp_score = 2;
     }
-    else if ((inRange(90, 109, systolic_bp) && inRange(60, 69, diastolic_bp)) || inRange(131, 139, systolic_bp) && inRange(86, 89, diastolic_bp)){
-        bp_score = 7 
-    } 
-    else if ((inRange(140, 159, systolic_bp) && inRange(90, 99, diastolic_bp)) || inRange(80, 89, systolic_bp) && inRange(50, 59, diastolic_bp)){
-        bp_score = 4
-    } 
-    else if ((inRange(160, 250, systolic_bp) && inRange(100, 150, diastolic_bp))){
-        bp_score = 2
-    } 
 
     const health_index = ((bp_score + Number(pulse_score) + age_score) / 3) * 10;
     const rounded_health_index = Math.round(health_index);
@@ -55,3 +54,16 @@ function calculate(){
     
 }
 
+function reset() {
+    document.getElementById('name').value = "";
+    document.getElementById('age').value = "";
+    document.getElementById('pulse').value = "";
+    document.getElementById('bp-systolic').value = "";
+    document.getElementById('bp-diastolic').value = "";
+
+    document.getElementById('overall_score').innerHTML = "--";
+    document.getElementById('overall_score_remarks').innerHTML = "Great";
+    document.getElementById('age_score').innerHTML = "--";
+    document.getElementById('pulse_score').innerHTML = "--";
+    document.getElementById('bp_score').innerHTML = "--";
+}
