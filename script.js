@@ -35,6 +35,20 @@ function calculate(){
     } 
 
     const health_index = ((bp_score + Number(pulse_score) + age_score) / 3) * 10;
+    const rounded_health_index = Math.round(health_index);
+
+    let remarks;
+    if (rounded_health_index >= 90) remarks = "EXCELLENT";
+    else if (rounded_health_index >= 75) remarks = "GOOD";
+    else if (rounded_health_index >= 50) remarks = "AVERAGE";
+    else if (rounded_health_index >= 30) remarks = "POOR";
+    else remarks = "UNHEALTHY";
+
+    document.getElementById('overall_score').innerHTML = `${rounded_health_index}`;
+    document.getElementById('overall_score_remarks').innerHTML = `${remarks}`;
+    document.getElementById('age_score').innerHTML = `${age_score}`;
+    document.getElementById('pulse_score').innerHTML = `${pulse_score}`;
+    document.getElementById('bp_score').innerHTML = `${bp_score}`;
 
     console.log(age_score, pulse_score, bp_score);
     console.log(health_index);

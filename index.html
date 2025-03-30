@@ -45,8 +45,44 @@
         <button class="btn" onclick="calculate()">Calculate</button>
     </div>
     </form>
-    <div class="card score-card" id="scoreCard">
-        Result
+    <div class="score-card" id="scoreCard">
+        <!-- <div class="score-circle" id="totalScore">--</div> -->
+        <div class="results-summary-container__result">
+            <div class="heading-tertiary">Your Result</div>
+            <div class="result-box">
+              <div class="heading-primary" id="overall_score">--</div>
+              <p class="result">of 100</p>
+            </div>
+            <div class="result-text-box">
+              <div class="heading-secondary" id="overall_score_remarks">Great</div>
+            </div>
+        </div>
+        <div class="results-summary-container__options">
+            <div class="heading-secondary heading-secondary--blue">Summary</div>
+        <div class="summary-result-options">
+            <div class="result-option result-option-age">
+            <div class="icon-box">
+                <span class="age-icon-text">Age Score</span>
+            </div>
+            <div class="summary-result-box"><span id="age_score">--</span> / 10</div>
+        </div>
+
+        <div class="result-option result-option-pulse">
+            <div class="icon-box">
+                <span class="age-icon-text">Pulse Score</span>
+            </div>
+            <div class="summary-result-box"><span id="pulse_score">--</span> / 10</div>
+        </div>
+
+        <div class="result-option result-option-bp">
+            <div class="icon-box">
+                <span class="age-icon-text">BP Score</span>
+            </div>
+            <div class="summary-result-box"><span id="bp_score">--</span> / 10</div>
+        </div>
+        </div>
+            <button class="btn btn-reset" onclick="reset()">Reset</button>
+        </div>
     </div>
     </div>
     <script src="script.js"></script>

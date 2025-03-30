@@ -1,114 +1,256 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
-    width: 100%;
-    background: #007bff;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 20px;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
 }
 
-.container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 80px;
-    gap: 30px;
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 80px;
+  gap: 30px;
 }
 
-.card{
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    text-align: center;
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
 }
 
 .card h2 {
-    margin-bottom: 15px;
-    color: #333
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.score-card{
-    width: 600px;
-    height: 380px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
+.score-card {
+  width: 600px;
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 20px; */
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  /* font-size: 36px; */
+  /* font-weight: bold; */
+  /* color: #333; */
 }
 
-.input-group{
-    margin-bottom: 10px;
-    text-align: left;
+.score-circle {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #007bff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
 }
 
-.input-group label{
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #555
+.score-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.input-group input{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
+.score-details div {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
 }
 
-.input-group select{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
+.input-group {
+  margin-bottom: 10px;
+  text-align: left;
 }
 
-.bp-group{
-    display: flex;
-    justify-content: space-between;
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
 }
 
-.bp-group input{
-    width: 48%;
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
 }
 
-.btn{
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background: #007bff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
+.input-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.bp-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bp-group input {
+  width: 48%;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-reset {
+    margin-top: 25px;
+    width: 109%;
 }
 
 .btn:hover {
-    background: #0056b3;
+  background: #0056b3;
 }
+
+.results-summary-container__result {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 5px;
+  border-radius: 12px;
+  background-color: #007bff;
+}
+
+.results-summary-container__options {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    gap: 30px;
+    padding: 20px 60px;
+    width: 60%;
+    height: 100%;
+    /* align-items: end; */
+  }
+
+  .summary-result-options {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+.heading-tertiary, .heading-secondary, .heading-primary {
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heading-secondary {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.heading-tertiary {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: hsl(221, 100%, 96%);
+  }
+
+  .heading-primary {
+    font-size: 46px;
+    font-weight: 700;
+  }
+
+  .heading-secondary--blue{
+    color: hsl(224, 30%, 27%);
+  }
+
+  .result {
+    margin-top: -18px;
+    font-size: 14px;
+    font-weight: 400;
+    color: hsl(241, 100%, 89%);
+  }
+
+.result-box {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-position: 100% 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.result-option {
+    width: 260px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: hsl(0, 100%, 95%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    /* border-radius: 3px; */
+    cursor: pointer;
+  }
+
+  .age-icon-text{
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+/* Color Palettes */
+/* https://coolors.co/ff595e-ffca3a-8ac926-1982c4-6a4c93 */
