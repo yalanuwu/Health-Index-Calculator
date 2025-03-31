@@ -54,6 +54,13 @@ function calculate(){
     }
 
 
+    document.querySelector('.container').classList.add('show-both');
+    void document.querySelector('.score-card').offsetWidth;
+
+    document.querySelector('.score-card').style.display = 'flex';
+    document.querySelector('.card').style.display = 'block';
+
+
     document.getElementById('overall_score').innerHTML = `${rounded_health_index}`;
     document.getElementById('overall_score_remarks').innerHTML = `${remarks}`;
     document.getElementById('age_score').innerHTML = `${age_score}`;
@@ -79,6 +86,8 @@ function calculate(){
 
     // Remove ripple effect after animation completes
     setTimeout(() => ripple.remove(), 1000);
+
+
     
 }
 
@@ -90,8 +99,17 @@ function reset() {
     document.getElementById('bp-diastolic').value = "";
 
     document.getElementById('overall_score').innerHTML = "--";
-    document.getElementById('overall_score_remarks').innerHTML = "Great";
+    document.getElementById('overall_score_remarks').innerHTML = "--";
     document.getElementById('age_score').innerHTML = "--";
     document.getElementById('pulse_score').innerHTML = "--";
     document.getElementById('bp_score').innerHTML = "--";
+
+    document.querySelector('.score-card').style.opacity = '0';
+
+    setTimeout(() => {
+        document.querySelector('.container').classList.remove('show-results');
+        document.querySelector('.score-card').style.display = 'none';
+        document.querySelector('.score-card').style.opacity = '1'; // Reset for next time
+        document.getElementById("score-card-1").style.backgroundColor = "#007bff";
+      }, 300);
 }

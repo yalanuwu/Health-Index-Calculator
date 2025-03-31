@@ -34,6 +34,24 @@ body {
   gap: 30px;
 }
 
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* When both are shown, remove the wrapper styling */
+.container.show-both .form-wrapper {
+  width: auto;
+}
+
+.container.show-both {
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px; /* This adds space between cards */
+  padding: 20px; /* Optional: adds some breathing room */
+  flex-wrap: wrap;
+}
 .card {
   background: white;
   padding: 20px;
@@ -41,6 +59,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 400px;
   text-align: center;
+  margin-right: 30px;
+  transition: all 0.4s ease-out;
 }
 
 .card h2 {
@@ -49,21 +69,36 @@ body {
 }
 
 .score-card {
+ 
   width: 600px;
   height: 380px;
-  display: flex;
+  display: none;
   justify-content: space-between;
-  /* padding: 20px; */
   align-items: center;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+  margin-left: 30px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: 
+    opacity 0.3s ease-out,
+    transform 0.4s ease-out;
   /* font-size: 36px; */
   /* font-weight: bold; */
   /* color: #333; */
 }
 
+
+.container.show-both .score-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Form card movement animation */
+.container.show-both .card {
+  transform: translateX(-10px);
+}
 .score-circle {
   width: 100px;
   height: 100px;
