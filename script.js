@@ -39,6 +39,21 @@ function calculate(){
     else if (rounded_health_index >= 30) remarks = "POOR";
     else remarks = "UNHEALTHY";
 
+    let scoreCard1 = document.getElementById("score-card-1");
+
+    if (remarks == "EXCELLENT") {
+        scoreCard1.style.backgroundColor = "#6A4C93";
+    } else if (remarks == "GOOD") {
+        scoreCard1.style.backgroundColor = "#1982C4";
+    } else if (remarks == "AVERAGE") {
+        scoreCard1.style.backgroundColor = "#8AC926";
+    } else if (remarks=="POOR"){
+        scoreCard1.style.backgroundColor = "#FFCA3A";
+    }else{
+        scoreCard1.style.backgroundColor = "#FF595E";
+    }
+
+
     document.getElementById('overall_score').innerHTML = `${rounded_health_index}`;
     document.getElementById('overall_score_remarks').innerHTML = `${remarks}`;
     document.getElementById('age_score').innerHTML = `${age_score}`;
@@ -47,6 +62,23 @@ function calculate(){
 
     console.log(age_score, pulse_score, bp_score);
     console.log(health_index);
+
+    // **Trigger Ripple Effect**
+    const resultBox = document.querySelector(".results-summary-container__result");
+
+    const ripple = document.createElement("span");
+    const rect = resultBox.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${rect.width / 2 - size / 2}px`;
+    ripple.style.top = `${rect.height / 2 - size / 2}px`;
+    ripple.classList.add("ripple-effect");
+
+    resultBox.appendChild(ripple);
+
+    // Remove ripple effect after animation completes
+    setTimeout(() => ripple.remove(), 1000);
     
 }
 
