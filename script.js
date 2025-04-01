@@ -27,7 +27,8 @@ function calculate(){
                (systolic_bp >= 80 && systolic_bp <= 89 && diastolic_bp >= 50 && diastolic_bp <= 59)) {
         bp_score = 4;
     } else {
-        bp_score = 2;
+        alert("Provided BP values are not valid. Please Check Once Again");
+        return;
     }
 
     const health_index = ((bp_score + Number(pulse_score) + age_score) / 3) * 10;
