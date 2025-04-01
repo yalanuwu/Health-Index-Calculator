@@ -11,12 +11,12 @@
     <div class="container">
         <div class="form-wrapper">
         
-    <form class="form">
+    <form class="form" onsubmit="calculate()">
     <div class="card">
         <h2>Enter Details</h2>
         <div class="input-group">
             <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter Name" required>
+            <input type="text" id="name" placeholder="Enter Name" pattern=[A-Za-z\s] required >
         </div>
         <div class="input-group">
             <label for="age">Age</label>
@@ -44,7 +44,7 @@
             </div>
             
         </div>
-        <button class="btn" onclick="calculate()">Calculate</button>
+        <button type="submit" class="btn">Calculate</button>
     </div>
     </form>
     <div class="score-card" id="scoreCard">
