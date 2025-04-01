@@ -16,7 +16,7 @@
         <h2>Enter Details</h2>
         <div class="input-group">
             <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter Name" pattern=[A-Za-z\s] required >
+            <input type="text" id="name" placeholder="Enter Name" pattern=[A-Za-z\s]+ required >
         </div>
         <div class="input-group">
             <label for="age">Age</label>
@@ -50,7 +50,7 @@
     <div class="score-card" id="scoreCard">
         <!-- <div class="score-circle" id="totalScore">--</div> -->
         <div class="results-summary-container__result" id="score-card-1">
-            <div class="heading-tertiary">Your Result</div>
+            <div class="heading-tertiary" id="result-text"> Result</div>
             <div class="result-box">
               <div class="heading-primary" id="overall_score">--</div>
               <p class="result">of 100</p>

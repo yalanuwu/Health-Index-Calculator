@@ -1,6 +1,7 @@
 function calculate(){
     event.preventDefault();
     const user_name = document.getElementById('name').value;
+    document.getElementById("result-text").innerHTML=`${user_name.toUpperCase()}'S RESULT`;
     const age = document.getElementById('age').value;
     // const pulse = document.getElementById('pulse').value;
     const systolic_bp = document.getElementById('bp-systolic').value;
@@ -31,24 +32,27 @@ function calculate(){
 
     const health_index = ((bp_score + Number(pulse_score) + age_score) / 3) * 10;
     const rounded_health_index = Math.round(health_index);
-
+    if(bp_score-Number(pulse_score)>=4 || (Number(pulse_score)-bp_score)>=4){
+        alert("Values you provided are not ideal. Consult a doctor");
+        return;
+    }
     let remarks;
     if (rounded_health_index >= 90) remarks = "EXCELLENT";
     else if (rounded_health_index >= 75) remarks = "GOOD";
     else if (rounded_health_index >= 50) remarks = "AVERAGE";
     else if (rounded_health_index >= 30) remarks = "POOR";
-    else remarks = "UNHEALTHY";
+    else remarks = "CRITICAL";
 
     let scoreCard1 = document.getElementById("score-card-1");
 
     if (remarks == "EXCELLENT") {
-        scoreCard1.style.backgroundColor = "#6A4C93";
-    } else if (remarks == "GOOD") {
-        scoreCard1.style.backgroundColor = "#1982C4";
-    } else if (remarks == "AVERAGE") {
         scoreCard1.style.backgroundColor = "#8AC926";
-    } else if (remarks=="POOR"){
+    } else if (remarks == "GOOD") {
+        scoreCard1.style.backgroundColor = "#C5CA30";
+    } else if (remarks == "AVERAGE") {
         scoreCard1.style.backgroundColor = "#FFCA3A";
+    } else if (remarks=="POOR"){
+        scoreCard1.style.backgroundColor = "#FF924C";
     }else{
         scoreCard1.style.backgroundColor = "#FF595E";
     }

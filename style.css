@@ -7,15 +7,16 @@
 
 .header {
   width: 100%;
-  background: #007bff;
+  background: #6A4C93;
   color: white;
   text-align: center;
   padding: 15px 0;
-  font-size: 20px;
+  font-size: 35px;
   font-weight: bold;
   position: fixed;
   top: 0;
   left: 0;
+  height: auto;
 }
 
 body {
@@ -166,7 +167,7 @@ body {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  background: #007bff;
+  background: #6A4C93;
   border: none;
   color: white;
   font-size: 16px;
@@ -181,7 +182,8 @@ body {
 }
 
 .btn:hover {
-  background: #0056b3;
+  background: #4D376C;
+  scale: 1.02;
 }
 
 .results-summary-container__result {
