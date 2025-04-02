@@ -112,7 +112,7 @@ function reset() {
     document.querySelector('.score-card').style.opacity = '0';
 
     setTimeout(() => {
-        document.querySelector('.container').classList.remove('show-results');
+        document.querySelector('.container').classList.remove('show-both');
         document.querySelector('.score-card').style.display = 'none';
         document.querySelector('.score-card').style.opacity = '1'; // Reset for next time
         document.getElementById("score-card-1").style.backgroundColor = "#007bff";
